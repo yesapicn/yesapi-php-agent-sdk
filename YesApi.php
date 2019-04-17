@@ -4,15 +4,15 @@
  *
  * 此文件，可用于为网站或者H5的混合应用，提供服务端代理，从而解决AJAX接口跨域、签名等问题。
  *
- * @link    http://www.okayapi.com
+ * @link    https://www.yesapi.cn/
  * @author  dogstar 2017-12-28
  */
 
 
-// 如果需要查看你的app_key和app_secrect，可访问：http://admin.okayapi.com/?r=Site/Mine
+// 如果需要查看你的app_key和app_secrect，可访问：http://open.yesapi.cn/?r=App/Mine
 
-define('OKAYAPI_APP_KEY', '');        // TODO: 请在此处输入你的app_key
-define('OKAYAPI_APP_SECRECT', '');    // TODO: 请在此处输入你的app_secrect
+define('YESAPI_APP_KEY', '');        // TODO: 请在此处输入你的app_key
+define('YESAPI_APP_SECRECT', '');    // TODO: 请在此处输入你的app_secrect
 
 $params = $_REQUEST;
 
@@ -26,13 +26,13 @@ if (isset($_SESSION['token'])) {
 }
 
 // 签名
-$params['app_key'] = OKAYAPI_APP_KEY;
-$params['sign'] = encryptAppKey($params, OKAYAPI_APP_SECRECT);
+$params['app_key'] = YESAPI_APP_KEY;
+$params['sign'] = encryptAppKey($params, YESAPI_APP_SECRECT);
 
 // 请求小白接口
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, 'http://api.okayapi.com/');
+curl_setopt($ch, CURLOPT_URL, 'http://api.yesapi.cn/');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
