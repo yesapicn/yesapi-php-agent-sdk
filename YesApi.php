@@ -32,7 +32,7 @@ $params['sign'] = encryptAppKey($params, YESAPI_APP_SECRECT);
 // 请求小白接口
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, 'http://api.yesapi.cn/');
+curl_setopt($ch, CURLOPT_URL, 'http://api.yesapi.cn/'); // TODO：这里也要修改成你的接口域名
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
