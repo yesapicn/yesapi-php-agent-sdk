@@ -18,13 +18,16 @@ define('YESAPI_APP_SECRECT', '');    // TODO: 请在此处输入你的app_secrec
 $params = $_REQUEST;
 
 session_start();
-// 自动加上会话凭证
+// 不再自动加上会话凭证，会导致通用数据自动与用户绑定。改为由客户端有需要时手动透传。
+/**
 if (isset($_SESSION['uuid'])) {
-    $params['uuid'] = $_SESSION['uuid'];
+	$params['uuid'] = $_SESSION['uuid'];
 }
 if (isset($_SESSION['token'])) {
-    $params['token'] = $_SESSION['token'];
+	$params['token'] = $_SESSION['token'];
 }
+*/
+
 
 // 签名
 $params['app_key'] = YESAPI_APP_KEY;
