@@ -59,7 +59,7 @@ if (isset($params['s']) && $params['s'] == 'App.User.Login') {
     }
 }
 // 输出接口结果
-header('Content-type: application/json;charset=uft-8');
+header('Content-type: application/json;charset=utf-8');
 echo $rs;
 
 
